@@ -1,22 +1,22 @@
 package pizza;
 
-public class BakedState extends State{
+public class DeliveredState extends State{
 
-	public BakedState(Pizza pizza) {
+	public DeliveredState(Pizza pizza) {
 		super(pizza);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean bake() {
-		pizza.setState(new BakedState(pizza));
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean deliver() {
-		pizza.setState(new DeliveredState(pizza));
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

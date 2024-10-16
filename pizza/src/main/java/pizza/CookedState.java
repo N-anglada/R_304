@@ -8,7 +8,7 @@ public class CookedState extends State{
 
 	@Override
 	public boolean bake() {
-		// TODO Auto-generated method stub
+		pizza.setState(new BakedState(pizza));
 		return true;
 	}
 
