@@ -8,33 +8,14 @@ public class Pizza {
 
 	private String name;
 
-	int state = COOKED;
+	State state;
 
 	public boolean bake() {
-
-		if (state == COOKED) {
-			state = BAKED;
-		} else if (state == BAKED) {
-			return false; // Can't bake a pizza already baked !
-		} else if (state == DELIVERED) {
-			return false; // Can't bake a pizza already delivered !
-		}
-
-		return true;
-
+		return state.bake();
 	}
 
 	public boolean deliver() {
-
-		if (state == COOKED) {
-			return false; // Can't deliver a pizza not baked yet;
-		} else if (state == BAKED) {
-			state = DELIVERED;
-		} else if (state == DELIVERED) {
-			return false; // Can't deliver a pizza already delivered;
-		}
-
-		return true;
+		return state.deliver();
 	}
 
 	public String getName() {
@@ -45,11 +26,11 @@ public class Pizza {
 		this.name = name;
 	}
 
-	public int getState() {
+	public State getState() {
 		return state;
 	}
 
-	public void setState(int state) {
+	public void setState(State state) {
 		this.state = state;
 	}
 
