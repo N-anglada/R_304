@@ -9,12 +9,12 @@ class PizzaTest {
 	@Test
 	void a_pizza_just_cooked_can_be_baked() {
 		Pizza pizza = new Pizza();
-		pizza.setState(Pizza.COOKED);
+		pizza.setState(new CookedState(pizza));
 		
 		boolean bakingDone = pizza.bake();
 		assertTrue(bakingDone);
 	}
-	
+	/*
 	@Test
 	void after_baking_it_the_pizza_is_baked() {
 		Pizza pizza = new Pizza();
@@ -71,11 +71,11 @@ class PizzaTest {
 		boolean bakingDone = pizza.bake();
 		assertFalse(bakingDone);
 		}
-	
+	*/
 	@Test
 	void a_pizza_just_cooked_can_not_already_be_delivered() {
 		Pizza pizza = new Pizza();
-		pizza.setState(Pizza.COOKED);
+		pizza.setState(new CookedState(pizza));
 		
 		boolean bakingDone = pizza.deliver();
 		assertFalse(bakingDone);

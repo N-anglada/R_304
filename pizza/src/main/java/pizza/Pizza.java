@@ -2,13 +2,13 @@ package pizza;
 
 public class Pizza {
 
-	public static final int COOKED = 0;
-	public static final int BAKED = 1;
-	public static final int DELIVERED = 2;
-
 	private String name;
 
 	State state;
+	
+	public Pizza() {
+		state = new CookedState(this);
+	}
 
 	public boolean bake() {
 		return state.bake();
